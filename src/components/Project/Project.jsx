@@ -1,7 +1,4 @@
-import { FaFolderOpen } from "react-icons/fa";
-import { IoLogoGithub } from "react-icons/io";
-import { IoEyeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+// Project.jsx
 
 const Project = ({
   projectName,
@@ -10,33 +7,59 @@ const Project = ({
   githubRepository,
   tags,
   date,
+  image,
 }) => {
-    return (
-      <div className="flex flex-col bg-mainColor text-white p-5 bedar-sc2:p-8 rounded-md border shadow">
-        <FaFolderOpen className="w-6 h-6" />
-        <strong className="mt-5 mb-2 text-2xl text-[#fedf89]">
-          {projectName}
-        </strong>
-        <div className="mb-2">{projectDescription}</div>
-        <div>{tags}</div>
-        <div className="flex items-center justify-between mt-10">
-          <div>{date}</div>
-          <div className="flex gap-2">
-            {projectURL && (
-              <Link to={projectURL}>
-                {<IoEyeSharp title="Live demo" className="w-6 h-6" />}
-              </Link>
-            )}
+  return (
+    <div className="project-card bg-white rounded-xl shadow-lg p-4">
+      {/* Project Image */}
+      {image && (
+        <img
+          src={image}
+          alt={projectName}
+          className="w-full h-48 object-cover rounded-lg mb-4"
+        />
+      )}
 
-            {
-              <Link to={githubRepository}>
-                {<IoLogoGithub title="Source Code" className="w-6 h-6" />}
-              </Link>
-            }
-          </div>
-        </div>
+      {/* Project Info */}
+      <h3 className="text-xl font-semibold">{projectName}</h3>
+      <p className="text-gray-600">{projectDescription}</p>
+
+      {/* Tags */}
+      <div className="flex gap-2 mt-2 flex-wrap">
+        {Array.isArray(tags) &&
+          tags.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm"
+            >
+              {tag}
+            </span>
+          ))}
       </div>
-    );
+
+      {/* Links */}
+      <div className="mt-3 flex gap-4">
+        {projectURL && (
+          <a
+            href={projectURL}
+            target="_blank"
+            className="text-white bg-blue-500 px-3 py-1 rounded-lg hover:bg-blue-600 transition"
+          >
+            Live
+          </a>
+        )}
+        {githubRepository && (
+          <a
+            href={githubRepository}
+            target="_blank"
+            className="text-white bg-gray-800 px-3 py-1 rounded-lg hover:bg-gray-900 transition"
+          >
+            GitHub
+          </a>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Project;
