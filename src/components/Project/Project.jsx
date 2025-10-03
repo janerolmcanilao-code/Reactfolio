@@ -13,11 +13,21 @@ const Project = ({
     <div className="project-card bg-white rounded-xl shadow-lg p-4">
       {/* Project Image */}
       {image && (
-        <img
-          src={image}
-          alt={projectName}
-          className="w-full h-48 object-cover rounded-lg mb-4"
-        />
+        projectURL ? (
+          <a href={projectURL} target="_blank" rel="noopener noreferrer">
+            <img
+              src={image}
+              alt={projectName}
+              className="w-full h-48 object-cover rounded-lg mb-4 cursor-pointer hover:opacity-80 transition"
+            />
+          </a>
+        ) : (
+          <img
+            src={image}
+            alt={projectName}
+            className="w-full h-48 object-cover rounded-lg mb-4"
+          />
+        )
       )}
 
       {/* Project Info */}

@@ -1,6 +1,8 @@
+import profileImg from "./images/profile.png";
 // assets.jsx
 
 import weatherAppImg from "./images/weather-app.png";
+import todoAppImg from "./images/todo-app.png";
 
 import {
   FaInstagramSquare,
@@ -14,6 +16,7 @@ import {
   FaJs,
   FaCss3Alt,
   FaYoutube,
+  FaReact,
 } from "react-icons/fa";
 import { BsFiletypeXml } from "react-icons/bs";
 import { TbBrandCpp, TbBrandKotlin } from "react-icons/tb";
@@ -51,63 +54,76 @@ const footerIcons = [
 ];
 
 // Logo & Nav
-const textLogo = "John Doe";
+const textLogo = "Jan Erol";
 const imgLogo = null;
 const navElements = ["About", "Education", "Skills", "Projects", "Contact"];
 
 // About Section
 const AboutPage = {
-  authorProfile: "",
+  authorProfile: profileImg,
   authorDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-  getInTouchUrl: "Your contact url",
-  authorName: "John Doe",
-  profileImgTagLine: "Software Engineer @ Google",
-  authorContactMail: "johndoe@gmail.com",
-  authorContactNumber: "843-695-0671",
+    "Aspiring front-end developer with a strong foundation in HTML, CSS, JavaScript, ReactJS, and TailwindCss, backed by experience in IT support and database systems. Skilled at building responsive web interfaces and eager to deliver high-quality software solutions.",
+  getInTouchUrl: "mailto:janerol.m.canilao@gmail.com",
+  authorName: "Jan Erol M. Canilao",
+  profileImgTagLine: "Front-End Developer",
+  authorContactMail: "janerol.m.canilao@gmail.com",
+  authorContactNumber: "0919-681-2788",
 };
 
 // Education Section
 const EducationPage = [
   {
-    graduationYear: 2021,
-    degreeType: "High School",
-    institution: "XYZ College",
-    institutionUrl: "",
+    graduationYear: 2025,
+    degreeType: "Bachelor of Science in Information Technology",
+    institution: "University of the Assumption",
+    institutionUrl: "https://ua.edu.ph/",
   },
   {
-    graduationYear: 2027,
-    degreeType: "Bachelor's degree",
-    institution: "XYZ University",
+    graduationYear: 2019,
+    degreeType: "Science, Technology, Engineering and Mathematics (Specialization in Computer Programming)",
+    institution: "Assumpta Technical High School",
     institutionUrl: "",
   },
 ];
 
-// Certificates Section
+// Certifications Section (styled like Education)
 const CertificatesPage = [
   {
-    img: "Your certificate image",
-    title: "Blue Mountain Certificate",
-    description: "Lorem ipsum...",
-    issuedBy: "Blue Mountain",
+    year: 2023,
+    title: "Python Essentials 1",
+    issuedBy: "",
+    credentialURL: "",
+  },
+  {
+    year: 2023,
+    title: "JavaScript Essentials 1",
+    issuedBy: "",
+    credentialURL: "",
+  },
+  {
+    year: 2024,
+    title: "Operating Systems Basics",
+    issuedBy: "",
+    credentialURL: "",
+  },
+  {
+    year: 2024,
+    title: "IT Specialist - Cybersecurity",
+    issuedBy: "",
     credentialURL: "",
   },
 ];
 
 // Skills Section
 const skillsPage = [
-  FaGitAlt,
-  FaGithub,
-  TbBrandCpp,
-  FaJava,
-  FaJs,
-  TbBrandKotlin,
-  FaPython,
   FaHtml5,
-  BsFiletypeXml,
   FaCss3Alt,
+  FaJs,
+  FaGithub,
+  FaPython,
+  FaGitAlt,
   RiTailwindCssFill,
-  FaYoutube,
+  FaReact,
 ];
 
 // Projects Section
@@ -115,20 +131,23 @@ const projectsPage = [
   {
     projectName: "Weather App",
     projectDescription:
-      "A responsive Weather App built with React, TailwindCSS, and Vite that fetches live weather data from OpenWeather API.",
+      "A simple responsive Weather App built with React, TailwindCSS, and Vite that fetches live weather data from OpenWeather API.",
     projectURL: "https://weather-app-ten-eta-95.vercel.app/",
     githubRepository: "https://github.com/janerolmcanilao-code/weather-app", // ✅ fixed name
     tags: ["React", "TailwindCSS", "Vite", "OpenWeather API"],
     date: "2025",
     image: weatherAppImg,
   },
+  
   {
-    projectName: "Git clone",
-    projectDescription: "lorem ipsum...",
-    projectURL: "",
-    githubRepository: "",
-    tags: ["Flask", "React.js", "MongoDB", "Rest API"],
-    date: "Sep 2022 - May 2023",
+  projectName: "To do List",
+  projectDescription:
+    "A simple To do List built with React, Vite & Tailwind — CRUD Operations",
+  projectURL: "https://todo-app-neon-five-74.vercel.app", // updated live link
+  githubRepository: "https://github.com/janerolmcanilao-code/todo-app",
+  tags: ["React", "Vite", "TailwindCSS"],
+  date: "2025",
+  image: todoAppImg,
   },
 ];
 

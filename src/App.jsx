@@ -26,7 +26,7 @@ const App = () => {
         {/* <Services /> */}
         <Contact />
       </div>
-      <Footer activeElem={activeElem} setActiveElem={setActiveElem} />
+  <Footer activeElem={activeElem} setActiveElem={setActiveElem} />
     </div>
   );
 };

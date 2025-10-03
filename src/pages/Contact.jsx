@@ -36,34 +36,17 @@ const Contact = () => {
             Contact Me
           </h1>
           <div className="text-center mb-4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos autem
-            deserunt maiores quas facere quae qui perferendis iure, dolorem
-            temporibus ipsum fugit ullam eaque soluta cupiditate, eius et
-            officiis veniam.
+            Thank you for visiting my portfolio. For inquiries regarding professional opportunities, collaborations, or further information, please don’t hesitate to contact me.
           </div>
-          <Link
-            to={`mailto:${AboutPage.authorContactMail}`}
-            className={LinkStyles}
-          >
+          <div className={LinkStyles}>
             <MdEmail className="w-6 h-6" />{" "}
             <span>{AboutPage.authorContactMail}</span>
-          </Link>
-          <Link
-            to={`tel:${AboutPage.authorContactMail}`}
-            className={LinkStyles}
-          >
+          </div>
+          <div className={LinkStyles}>
             <FaPhoneAlt className="w-[18px] h-[18px]" />{" "}
             <span>{AboutPage.authorContactNumber}</span>
-          </Link>
-          <div className="flex justify-center gap-2 flex-wrap mt-4">
-            {footerIcons.map(
-              ({ name, component: IconComponent, link }, index) => (
-                <Link to={link} key={index} title={name}>
-                  <IconComponent className="h-9 w-9 rounded-lg fill-zinc-400 hover:fill-white transition-colors ease-linear" />
-                </Link>
-              )
-            )}
           </div>
+          {/* Social icons removed from Contact section */}
         </div>
       </div>
     </div>

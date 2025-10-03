@@ -25,12 +25,19 @@ const About = () => {
             Hi, I am <strong className="text-[#fedf89]">{authorName}</strong>
           </div>
           <div className="leading-7 text-lg ">{authorDescription}</div>
-          <Link
-            to={getInTouchUrl}
+          <a
+            href="#Contact"
+            onClick={e => {
+              e.preventDefault();
+              const contactSection = document.getElementById("Contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="bg-white text-textColor px-4 py-2 rounded-full w-fit hover:bg-[#fedf89] hover:text-textColor font-semibold transition-all ease-linear text-[1rem]"
           >
             Get In Touch
-          </Link>
+          </a>
         </div>
         <div className="w-full bedar-sc1:w-1/2 flex justify-center bedar-sc1:justify-end">
           <div className="relative w-full h-full bedar-sc2:w-[25rem] bedar-sc2:h-[25rem] rounded-2xl cursor-pointer shadow-md border transition-shadow ease-linear hover:shadow-lg overflow-hidden group">

@@ -7,29 +7,7 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 
 const Projects = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (projectsPage && projectsPage.length > 0) {
-      let btn = document.querySelector(".project-btn");
-
-      const handleMouseEnter = () => {
-        setIsHovered(true);
-      };
-
-      const handleMouseLeave = () => {
-        setIsHovered(false);
-      };
-
-      btn.addEventListener("mouseenter", handleMouseEnter);
-      btn.addEventListener("mouseleave", handleMouseLeave);
-
-      return () => {
-        btn.removeEventListener("mouseenter", handleMouseEnter);
-        btn.removeEventListener("mouseleave", handleMouseLeave);
-      };
-    }
-  }, []);
+  // Removed useEffect for .project-btn since button is gone
 
   return (
     <>
@@ -38,39 +16,30 @@ const Projects = () => {
           <PageTitle title={"Projects"} />
           <div>
             <div className="grid grid-cols-1 bedar-sc2:grid-cols-2 gap-5">
-              {projectsPage.map(
-                ({
+              {projectsPage
+                .filter(project => project.image) // Only show projects with image
+                .map(({
                   projectName,
                   projectDescription,
                   projectURL,
                   githubRepository,
                   tags,
                   date,
-                }) => (
+                  image,
+                }, idx) => (
                   <Project
-                    key={1}
+                    key={idx}
                     projectName={projectName}
                     projectDescription={projectDescription}
                     projectURL={projectURL}
                     githubRepository={githubRepository}
                     tags={tags}
                     date={date}
+                    image={image}
                   />
-                )
-              )}
+                ))}
             </div>
-            <div>
-              <Link to={"/"} className="flex justify-center mt-9">
-                <button className="project-btn bg-mainColor hover:bg-mainHover text-white py-3 px-4 rounded-full flex items-center gap-2 transition-all ease-linear">
-                  More Projects{" "}
-                  {isHovered ? (
-                    <IoArrowBackOutline className="w-5 h-5 rotate-180" />
-                  ) : (
-                    <IoIosArrowForward className="w-5 h-5" />
-                  )}
-                </button>
-              </Link>
-            </div>
+            {/* More Projects button removed */}
           </div>
         </div>
       }
